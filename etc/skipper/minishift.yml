@@ -1,0 +1,25 @@
+maven.remote-repositories.skipper.url: http://nexus-skipper.192.168.64.43.nip.io/content/groups/public/
+
+spring:
+  cloud:
+    skipper:
+      server:
+        enableLocalPlatform: false
+        packageRepositories:
+          -
+            name: local
+            url: http://${spring.cloud.client.hostname}:7577
+            local: true
+            description: Default local database backed repository
+            repoOrder: 1
+        platform:
+          openshift:
+            accounts:
+              skipper:
+                namespace: skipper
+                defaultDockerfile: Dockerfile.nexus
+                entryPointStyle: boot
+                requests:
+                  cpu: 0
+                limits:
+                  cpu: 4

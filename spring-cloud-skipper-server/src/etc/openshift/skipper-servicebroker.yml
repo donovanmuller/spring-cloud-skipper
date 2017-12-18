@@ -1,0 +1,8 @@
+apiVersion: servicecatalog.k8s.io/v1beta1
+kind: ClusterServiceBroker
+metadata:
+  name: skipper-service-broker
+spec:
+  url: http://skipper.skipper.svc:7577
+  relistBehavior: Duration
+  relistDuration: 1s

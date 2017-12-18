@@ -24,10 +24,12 @@ import org.springframework.context.annotation.Import;
  * Auto-configuration for skipper server.
  *
  * @author Janne Valkealahti
+ * @author Donovan Muller
  */
 @Configuration
 @ConditionalOnBean(EnableSkipperServerConfiguration.Marker.class)
-@Import({SkipperServerConfiguration.class, SkipperServerPlatformConfiguration.class})
+@Import({ SkipperServerConfiguration.class, SkipperServerPlatformConfiguration.class,
+		ServiceBrokerCatalogConfiguration.class })
 @ConditionalOnProperty(prefix = "spring.cloud.skipper.server", name = "enabled", havingValue = "true", matchIfMissing = true)
 public class SkipperServerAutoConfiguration {
 }

@@ -38,6 +38,11 @@
             <artifactId>spring-cloud-skipper-platform-cloudfoundry</artifactId>
         </dependency>
         <dependency>
+            <groupId>io.switchbit</groupId>
+            <artifactId>spring-cloud-skipper-platform-openshift</artifactId>
+            <version>1.0.0.BUILD-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
